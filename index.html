@@ -12,7 +12,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       background-color: #f9f9f9;
       color: #333;
     }
@@ -38,19 +38,23 @@
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 3.5rem;
+      margin-bottom: 10px; /* Reduced margin */
       color: #007bff;
+      white-space: nowrap; /* Keep on the same line */
     }
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+    h2 {
+      font-size: 1.5rem;
       color: #555;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-weight: normal; /* Make the body text non-bold */
     }
 
     .btn {
       padding: 12px 24px;
+      font-size: 1rem;
       background-color: #007bff;
       color: #fff;
       text-decoration: none;
@@ -59,7 +63,6 @@
       display: inline-block;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-weight: bold;
       border: 2px solid transparent;
     }
 
@@ -71,24 +74,43 @@
       transform: translateY(1px);
     }
 
-    .btn-outline {
-      background-color: transparent;
-      color: #007bff;
-      border-color: #007bff;
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+        white-space: normal; /* Allow to break into a new line on mobile */
+      }
+      h1,
+      h2 {
+        white-space: pre-line; /* Separate 'B's Goods' on a new line */
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
     }
 
-    .btn-outline:hover {
-      background-color: #007bff;
-      color: #fff;
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 2.5rem;
+        white-space: normal; /* Allow to break into a new line on mobile */
+      }
+      h1 {
+        white-space: normal; /* Separate 'Welcome to' on a new line for small displays */
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .btn {
+        display: block; /* Display button as a block on mobile */
+        margin-top: 20px; /* Add margin to the button for spacing */
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to B's Goods</h1>
-    <p>Our website is currently under development. Stay tuned for exciting updates!</p>
+    <h1>Welcome to <br class="break-on-mobile">B's Goods</h1>
+    <h2>Our website is currently under development.<br>Stay tuned for exciting updates!</h2>
     <a href="#" class="btn">Stay Updated</a>
-    <a href="#" class="btn btn-outline" style="margin-left: 15px;">Follow Us</a>
   </div>
 </body>
 </html>
