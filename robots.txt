@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /info/
+Disallow: /assets/
+
+# Prevent indexing of entire site
+User-agent: googlebot
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
